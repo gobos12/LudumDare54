@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4159480204739807806}
   - component: {fileID: 3265586886988255329}
   - component: {fileID: 6706707110912038984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: celeryStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}

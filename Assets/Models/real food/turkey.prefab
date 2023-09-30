@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7329596396949644550}
   - component: {fileID: 6169696665091627548}
   - component: {fileID: 8352645168039026019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3465311509431531205}
   - component: {fileID: 7540713827874438245}
   - component: {fileID: 3240011463906921178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: turkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 965696408898508022}
   - component: {fileID: 7670842140635719457}
   - component: {fileID: 6976578080389577396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

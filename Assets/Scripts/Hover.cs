@@ -22,7 +22,7 @@ public class Hover : MonoBehaviour
     {
         ray = camera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray.origin, ray.direction, out hit))
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f))
         {
             target = hit.collider.gameObject;
             

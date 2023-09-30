@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4322640103427035475}
   - component: {fileID: 2847188907643404022}
   - component: {fileID: 827066940842270475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cartonSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

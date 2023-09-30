@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3727194414483439423}
   - component: {fileID: 6433332919428315778}
   - component: {fileID: 3766001084320390518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: meatSausage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

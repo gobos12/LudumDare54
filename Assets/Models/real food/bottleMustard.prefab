@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4192669563879877530}
   - component: {fileID: 3141071700619527527}
   - component: {fileID: 2309934039901376144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bottleMustard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

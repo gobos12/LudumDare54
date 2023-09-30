@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6407277973601877159}
   - component: {fileID: 3446647601196317546}
   - component: {fileID: 878440282714814272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: chocolateWrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

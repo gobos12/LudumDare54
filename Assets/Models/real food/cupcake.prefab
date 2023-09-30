@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1279848025821525324}
   - component: {fileID: 6070732467884097545}
   - component: {fileID: 5638967448528952640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cupcake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 2254091328332194979}
   - component: {fileID: 784465199596310425}
   - component: {fileID: 5650856939851927752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cherry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 4491190165035052652}
   - component: {fileID: 761401236196334778}
   - component: {fileID: 6356853346177756771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cake
   m_TagString: Untagged
   m_Icon: {fileID: 0}

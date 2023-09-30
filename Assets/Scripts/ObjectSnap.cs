@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,18 +21,23 @@ public class ObjectSnap : MonoBehaviour
     {
         if (!isBeingSnapped)
         {
-            Ray ray = new Ray(transform.position - new Vector3(0, 0, 0), Vector3.down);
+            Ray ray = new Ray(transform.position, Vector3.down);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10))
             {
                 if (hit.collider.gameObject.tag == "Fridge")
                 {
                     Debug.Log("snapped");
-                    transform.position = hit.point + new Vector3(0, 0, 0);
+                    transform.position = hit.point;
                     isBeingSnapped = true;
                 }
             }
         }
-        Debug.DrawRay(transform.position - new Vector3(0, 0, 0), Vector3.down * 100, Color.red);
+        Debug.DrawRay(transform.position, Vector3.down * 100, Color.red);
+    }
+
+    private void OnCollisionStay(Collision collisionInfo)
+    {
+        Debug.Log(collisionInfo.collider.gameObject);
     }
 }

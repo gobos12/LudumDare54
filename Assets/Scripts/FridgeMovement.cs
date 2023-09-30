@@ -14,15 +14,25 @@ public class FridgeMovement : MonoBehaviour
     public Transform ogCameraPos;
 
     public GameObject gameController;
+    public LayerMask ignoreLayer;
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Hover.singleton.target != null && Hover.singleton.target.tag.Contains("Fridge"))
         {
             OpenDoor(Hover.singleton.target, Hover.singleton.camera);
         }
-        
+        */
+        Ray ray = Hover.singleton.camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f, ~ignoreLayer))
+        {
+            OpenDoor(hit.collider.gameObject, Hover.singleton.camera);
+        }
+
     }
 
     private void OpenDoor(GameObject target, Camera camera)

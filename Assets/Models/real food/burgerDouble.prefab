@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3528802491714381431}
   - component: {fileID: 2151990174678168440}
   - component: {fileID: 3818151948350388451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bunBottom 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1601385244227697048}
   - component: {fileID: 2837747795135747447}
   - component: {fileID: 3550159210719759100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 7028025664706681248}
   - component: {fileID: 8076322488836311877}
   - component: {fileID: 4014344317711798115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bunTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 2417041843658208301}
   - component: {fileID: 3874804812586101075}
   - component: {fileID: 3838885727461984959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012772130617979821}
   - component: {fileID: 6823860578859480881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: burgerDouble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 8737139923680640194}
   - component: {fileID: 3319168822770104553}
   - component: {fileID: 954388906667568849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cheese 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 8654603744745459091}
   - component: {fileID: 4208639011950515876}
   - component: {fileID: 7502591174188203219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bunBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 1968649811100685258}
   - component: {fileID: 440123425817060433}
   - component: {fileID: 2017512086320070214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: salad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 4735172390023048500}
   - component: {fileID: 6511368657341705235}
   - component: {fileID: 5465945110531388109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: patty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 7853320730443840729}
   - component: {fileID: 1403939933444983397}
   - component: {fileID: 2164055673528869861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: patty 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 5944127790528591177}
   - component: {fileID: 357975162381125637}
   - component: {fileID: 2973138153503730193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: salad 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

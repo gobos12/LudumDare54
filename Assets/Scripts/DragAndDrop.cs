@@ -17,6 +17,7 @@ public class DragAndDrop : MonoBehaviour
     public Texture2D cursor2;
 
     public bool inTrash = false;
+    public LayerMask ignoreLayer;
 
 
     private void Start()
@@ -66,10 +67,12 @@ public class DragAndDrop : MonoBehaviour
             }
             else if(holding == false)
             {
-                target.GetComponent<MeshCollider>().enabled = false;
+                //target.GetComponent<MeshCollider>().enabled = false;
                 RaycastHit hitInfo;
-                target = Hover.singleton.target;//GetClickedObject (out hitInfo);
-                if (target != null && target.tag != "Crate" && target.tag != "Fridge") {
+                //Hover.singleton.ignoreLayer = ignoreLayer;
+                //target = Hover.singleton.target;
+                GameObject localTarget = GetClickedObject(out hitInfo);
+                if (localTarget != null && localTarget.tag != "Crate" && localTarget.tag != "Fridge") {
                     
                     Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
                     holding = true;
@@ -112,7 +115,7 @@ public class DragAndDrop : MonoBehaviour
     {
         GameObject target = null;
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-        if (Physics.Raycast (ray.origin, ray.direction * 10, out hit)) {
+        if (Physics.Raycast (ray.origin, ray.direction * 10, out hit, 1000f, ~ignoreLayer)) {
             if (hit.collider.gameObject.tag != "Fridge")
             {
                 target = hit.collider.gameObject;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -919,6 +919,9 @@ MonoBehaviour:
   cursor: {fileID: 2800000, guid: 8a3e7b99997043849b670c2cbc38f00e, type: 3}
   cursor2: {fileID: 2800000, guid: 1d1b1434ab64cb642b873cfc119abdfb, type: 3}
   inTrash: 0
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &1000628234
 Transform:
   m_ObjectHideFlags: 0
@@ -947,6 +950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 330585545}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
   target: {fileID: 0}
 --- !u!1 &1038080391
 GameObject:
@@ -1736,8 +1742,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149688971843239376, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149688971843239376, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
       propertyPath: m_TagString
       value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802092995818306005, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1802092995818306005, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1748,6 +1764,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052992651138286326, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2052992651138286326, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1766,6 +1787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563917334101579892, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563917334101579892, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
       propertyPath: m_TagString
       value: Fridge
       objectReference: {fileID: 0}
@@ -1773,6 +1799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.148
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858845210246318567, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2858845210246318567, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1829,6 +1860,11 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1000628232}
+    - target: {fileID: 3634680978064810441, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: ignoreLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4795026906579138215, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_IsActive
@@ -1901,8 +1937,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409885600604898905, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409885600604898905, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
       propertyPath: m_TagString
       value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598986488254517574, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6598986488254517574, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}

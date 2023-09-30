@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3965141149285329788}
   - component: {fileID: 1138455256803355994}
   - component: {fileID: 7144885317681436960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: slice 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1707616416950182497}
   - component: {fileID: 7095251480912680032}
   - component: {fileID: 1915791000682262061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: slice 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 3266476774612206997}
   - component: {fileID: 5593650129537722293}
   - component: {fileID: 3856496144244496327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 7925296182581348296}
   - component: {fileID: 8582727934221791195}
   - component: {fileID: 6501755151707656604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: slice 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 1827075888561938375}
   - component: {fileID: 4431177557384893160}
   - component: {fileID: 2988011598549393248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: slice 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 4987410767264401495}
   - component: {fileID: 8453018727343316922}
   - component: {fileID: 6349440399478061904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: slice 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9135883285961987489}
   - component: {fileID: 3562788149363266324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cake
   m_TagString: Untagged
   m_Icon: {fileID: 0}

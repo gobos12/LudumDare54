@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5760840975658968858}
   - component: {fileID: 2482972405321876391}
   - component: {fileID: 8612185698750810791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wholeHam
   m_TagString: Untagged
   m_Icon: {fileID: 0}

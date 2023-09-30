@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6896329680489223431}
   - component: {fileID: 7152068887073806608}
   - component: {fileID: 4281202114583960837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: frappe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 2478831956957431738}
   - component: {fileID: 9105715706303721054}
   - component: {fileID: 5321155562643601686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: straw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
