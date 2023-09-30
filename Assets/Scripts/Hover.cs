@@ -36,6 +36,15 @@ public class Hover : MonoBehaviour
         }
     }
 
+    public void glowyBoxes(GameObject target)
+    {
+        if (target.name.Contains("Section"))
+        {
+            target.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
+    
+
     public void turnOffCursor()
     {
         Cursor.visible = false;

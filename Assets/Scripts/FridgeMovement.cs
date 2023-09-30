@@ -68,7 +68,8 @@ public class FridgeMovement : MonoBehaviour
                 
             }
             else if (target.name.Contains("Section") || target.name.Contains("Waste")) //fridge section
-            {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
+            {   
+                Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (target.gameObject.GetComponent<ObjectState>().isOpen)
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
