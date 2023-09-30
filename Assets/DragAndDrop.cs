@@ -22,7 +22,6 @@ public class DragAndDrop : MonoBehaviour
         if (justSpawnedItem)
         {
             SpawnedItemUpdate();
-            //justSpawnedItem = false;
         }
         else
         {
@@ -35,7 +34,6 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
             if (_mouseState) {
                 _mouseState = false;
-                Debug.Log("Setting false");
             }
             else if(_mouseState == false){
                 RaycastHit hitInfo;
@@ -55,7 +53,6 @@ public class DragAndDrop : MonoBehaviour
             var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
 
             target.transform.position = curPosition;
-            Debug.Log(curPosition);
         }
     }
 
