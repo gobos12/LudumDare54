@@ -55,7 +55,10 @@ public class DragAndDrop : MonoBehaviour
         GameObject target = null;
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         if (Physics.Raycast (ray.origin, ray.direction * 10, out hit)) {
-            target = hit.collider.gameObject;
+            if (hit.collider.gameObject.tag != "Fridge")
+            {
+                target = hit.collider.gameObject;
+            }
         }
 
         return target;
