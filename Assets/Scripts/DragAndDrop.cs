@@ -16,10 +16,9 @@ public class DragAndDrop : MonoBehaviour
 
     public bool inTrash = false;
 
-    void Start ()
-    {
-
-    }
+    public Camera camera;
+    private Ray ray;
+    
 
     // Update is called once per frame
     void Update ()
@@ -32,6 +31,13 @@ public class DragAndDrop : MonoBehaviour
         {
             NormalItemUpdate();
         }
+    }
+
+    Vector3 currentMousePosition()
+    {
+        ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        return ray.origin + ray.direction;
     }
 
     void NormalItemUpdate()
@@ -47,12 +53,12 @@ public class DragAndDrop : MonoBehaviour
                     }
                 }
                 else{
-                _mouseState = false;
-                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
-                if (target != null && target.GetComponent<ObjectSnap>())
-                {
-                    target.GetComponent<ObjectSnap>().isBeingSnapped = false;
-                }
+                    _mouseState = false;
+                    Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+                    if (target != null && target.GetComponent<ObjectSnap>())
+                    {
+                        target.GetComponent<ObjectSnap>().isBeingSnapped = false;
+                    }
                 }
             }
             else if(_mouseState == false){
@@ -61,10 +67,10 @@ public class DragAndDrop : MonoBehaviour
                 target = GetClickedObject (out hitInfo);
                 if (target != null && target.tag != "Crate") {
                     
-                Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
-                    _mouseState = true;
-                    screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
-                    offset = target.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
+                    Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
+                        _mouseState = true;
+                        screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
+                        offset = target.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
                 }
             }
         }
@@ -72,10 +78,9 @@ public class DragAndDrop : MonoBehaviour
         if (_mouseState) {
             var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
 
-            
             var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
 
-            target.transform.position = curPosition;
+            target.transform.position = currentMousePosition(); 
         }
     }
 

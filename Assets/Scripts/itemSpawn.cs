@@ -7,19 +7,8 @@ public class itemSpawn : MonoBehaviour
     public List<GameObject> foodList = new List<GameObject>();
 
     public DragAndDrop dd;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
-     void OnMouseDown()
+    void OnMouseDown()
    {
      
       RaycastHit hit = RayFromCamera(Input.mousePosition, 1000.0f);
