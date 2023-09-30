@@ -25,12 +25,12 @@ public class FridgeMovement : MonoBehaviour
 
         if (Physics.Raycast(ray.origin, ray.direction, out hit))
         {
-            Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
+            
             Debug.Log(hit.collider.name);
             OpenDoor();
         }
         else{
-            Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+           
         }
 
 
@@ -42,13 +42,13 @@ public class FridgeMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             if (hit.collider.name.Contains("Door"))
-            {
+            {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 hit.collider.gameObject.transform.rotation = hit.collider.gameObject.GetComponent<ObjectState>().isOpen ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
                 hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
                     !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
             }
             else if(hit.collider.name.Contains("Drawer"))//Drawers
-            {
+            {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
                 {
                     hit.collider.gameObject.transform.position -= new Vector3(0, 0, 0.8f);
@@ -57,7 +57,7 @@ public class FridgeMovement : MonoBehaviour
                     camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 0f;
                 }
                 else
-                {
+                {   
                     hit.collider.gameObject.transform.position += new Vector3(0, 0, 0.8f);
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition =
@@ -72,7 +72,7 @@ public class FridgeMovement : MonoBehaviour
                 
             }
             else if (hit.collider.name.Contains("Section")) //fridge section
-            {
+            {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
@@ -89,6 +89,9 @@ public class FridgeMovement : MonoBehaviour
 
                 hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
                     !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
+            }
+            else{
+                
             }
         }
         
