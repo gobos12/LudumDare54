@@ -473,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate_06
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44fc872fb462bbe48b2eaeaf05bf867b, type: 3}
+      propertyPath: m_TagString
+      value: Crate
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44fc872fb462bbe48b2eaeaf05bf867b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -525,6 +529,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1532262140}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 44fc872fb462bbe48b2eaeaf05bf867b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1532262144}
   m_SourcePrefab: {fileID: 100100000, guid: 44fc872fb462bbe48b2eaeaf05bf867b, type: 3}
 --- !u!1 &171235623 stripped
 GameObject:
@@ -977,6 +985,10 @@ MonoBehaviour:
   lerpDuration: 0
   elapsedTime: 0
   targetHit: 0
+  target2Hit: 0
+  startPosition: {fileID: 0}
+  endPosition: {x: 0, y: 0, z: 0}
+  rotationAngle: 0
 --- !u!1 &346410309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f4a7e9769305db468bbd2e7b9a064fe,
@@ -2667,21 +2679,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2095916329}
   m_SourcePrefab: {fileID: 100100000, guid: d1f118913106ce74f859fedf7b746ec9, type: 3}
---- !u!114 &975368648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6100434731741437359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 790176741ab8698409c09c732ddb5821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftDoor: {fileID: 0}
-  rightDoor: {fileID: 0}
-  camera: {fileID: 0}
 --- !u!1001 &983279975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3737,6 +3734,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 44fc872fb462bbe48b2eaeaf05bf867b, type: 3}
+--- !u!114 &1532262144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532262136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58dafddc4bf26344a19fda57fe2062d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodList:
+  - {fileID: 7439653194954487030, guid: b2500fa7dc7305948b58a6f8b79aa437, type: 3}
+  - {fileID: 4012993712012494738, guid: db19002db044a3444a8691dfa0f329de, type: 3}
+  dd: {fileID: 1975397106}
 --- !u!1001 &1559609205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4080,6 +4093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92eab27370918e4682125f1881e1520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mouseState: 0
+  target: {fileID: 0}
   screenSpace: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!4 &1975397107
@@ -4919,7 +4934,6 @@ GameObject:
   - component: {fileID: 7515683320258627760}
   - component: {fileID: 5740371405343095930}
   - component: {fileID: 8176383646140506798}
-  - component: {fileID: 975368648}
   m_Layer: 0
   m_Name: Fridge_SBS
   m_TagString: Untagged

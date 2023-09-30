@@ -5,6 +5,8 @@ using UnityEngine;
 public class itemSpawn : MonoBehaviour
 {
     public List<GameObject> foodList = new List<GameObject>();
+
+    public DragAndDrop dd;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,16 +16,24 @@ public class itemSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("up")){
-
-            RaycastHit hit = RayFromCamera(Input.mousePosition, 1000.0f);
-
-            int index = Random.Range (0, foodList.Count-1); 
-            var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
-            go.transform.position = Input.mousePosition;
-
-        }
+       
     }
+
+     void OnMouseDown()
+   {
+     
+      RaycastHit hit = RayFromCamera(Input.mousePosition, 1000.0f);
+
+            int index = Random.Range (0, foodList.Count); 
+            var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
+
+            go.transform.position = new Vector3(1.3f, -0.1f, 1f );
+            
+            dd.offset = new Vector3(0f,0f,0f);
+            dd.target = go;
+            dd._mouseState = true;
+            
+   }
 
     public RaycastHit RayFromCamera(Vector3 mousePosition, float rayLength)
 {
