@@ -22,7 +22,7 @@ public class FridgeMovement : MonoBehaviour
 
         if (Physics.Raycast(ray.origin, ray.direction, out hit))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             OpenDoor();
         }
 
@@ -63,6 +63,25 @@ public class FridgeMovement : MonoBehaviour
                 hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
                     !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
                 
+            }
+            else if (hit.collider.name.Contains("Section")) //fridge section
+            {
+                if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
+                {
+                    camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
+                    camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos.position;
+                }
+                else
+                {
+                    camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
+                    camera.gameObject.GetComponent<CameraMovement>().endPosition =
+                        hit.collider.gameObject.transform.position + new Vector3(0,0,1f);
+                }
+                
+                camera.gameObject.GetComponent<CameraMovement>().target2Hit = true;
+
+                hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
+                    !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
             }
         }
         

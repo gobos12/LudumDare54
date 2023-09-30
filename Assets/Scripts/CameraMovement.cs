@@ -9,6 +9,7 @@ public class CameraMovement : MonoBehaviour
     public float elapsedTime;
     
     public bool targetHit;
+    public bool target2Hit;
     public Transform startPosition;
     public Vector3 endPosition;
     public float rotationAngle;
@@ -25,6 +26,11 @@ public class CameraMovement : MonoBehaviour
         if (targetHit)
         {
             CameraSlerp(startPosition, endPosition);
+        }
+
+        if (target2Hit)
+        {
+            CameraLerp(startPosition, endPosition);
         }
     }
     
@@ -43,6 +49,20 @@ public class CameraMovement : MonoBehaviour
             elapsedTime = 0;
         }
         
+    }
+
+    public void CameraLerp(Transform start, Vector3 end)
+    {
+        if (elapsedTime < lerpDuration)
+        {
+            transform.position = Vector3.Lerp(start.position, end, elapsedTime / lerpDuration);
+            elapsedTime += Time.deltaTime;
+        }
+        else
+        {
+            target2Hit = false;
+            elapsedTime = 0;
+        }
     }
     
     
