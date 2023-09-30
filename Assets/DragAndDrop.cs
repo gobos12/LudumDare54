@@ -42,6 +42,7 @@ public class DragAndDrop : MonoBehaviour
                 if(inTrash){
                     if(target!=null){
                         Destroy(target);
+                        Points.singleton.pointCount -= 5;
                         _mouseState = false;
                     }
                 }
