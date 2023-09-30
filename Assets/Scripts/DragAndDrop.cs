@@ -61,6 +61,9 @@ public class DragAndDrop : MonoBehaviour
                     Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
                     if (target != null && target.GetComponent<ObjectSnap>())
                     {
+                        if( target.GetComponent<ObjectSnap>().isBeingSnapped){
+                            Points.singleton.pointCount += 5;
+                        }
                         target.GetComponent<ObjectSnap>().isBeingSnapped = false;
                     }
                 }

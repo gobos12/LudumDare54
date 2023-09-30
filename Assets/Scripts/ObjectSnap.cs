@@ -31,6 +31,8 @@ public class ObjectSnap : MonoBehaviour
                 {
                     transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
                     isBeingSnapped = true;
+                    
+                   
                 }
             }
 
@@ -42,6 +44,8 @@ public class ObjectSnap : MonoBehaviour
                 {
                     transform.position = new Vector3(rightHit.point.x + objectWidth / 2, transform.position.y, transform.position.z);
                     isBeingSnapped = true;
+                    
+                    
                 }
             }
             
@@ -53,10 +57,12 @@ public class ObjectSnap : MonoBehaviour
                 {
                     transform.position = new Vector3(leftHit.point.x - objectWidth / 2, transform.position.y, transform.position.z);
                     isBeingSnapped = true;
+                    
                 }
             }
 
         }
+        
         Debug.DrawRay(transform.position, Vector3.down * 10, Color.red);
         Debug.DrawRay(transform.position, Vector3.left * objectWidth / 2, Color.green);
         Debug.DrawRay(transform.position, Vector3.right * objectWidth / 2, Color.green);
