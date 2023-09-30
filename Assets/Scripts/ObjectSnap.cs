@@ -32,7 +32,10 @@ public class ObjectSnap : MonoBehaviour
                 {
                     transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
                     isBeingSnapped = true;
-                    
+                    if (Hover.singleton.camera.gameObject.GetComponent<CameraMovement>().rotationAngle == 90f)
+                    {
+                        transform.parent = hit.collider.transform;
+                    }
                    
                 }
             
