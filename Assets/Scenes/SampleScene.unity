@@ -463,8 +463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23, y: 59}
-  m_SizeDelta: {x: 291.7279, y: 50}
+  m_AnchoredPosition: {x: 13, y: 59}
+  m_SizeDelta: {x: 351.1833, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80895898
 MonoBehaviour:
@@ -514,8 +514,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.87
-  m_fontSizeBase: 37.87
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -933,7 +933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -79}
+  m_AnchoredPosition: {x: 4, y: -53}
   m_SizeDelta: {x: 609.8828, y: 156.2659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &257671195
@@ -2433,7 +2433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -170}
+  m_AnchoredPosition: {x: 4, y: -159}
   m_SizeDelta: {x: 609.8828, y: 156.2659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001909580
@@ -3042,7 +3042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 79}
+  m_AnchoredPosition: {x: 4, y: 121}
   m_SizeDelta: {x: 609.8828, y: 156.2659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251355860
@@ -3260,6 +3260,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1000628235}
+        m_TargetAssemblyTypeName: Hover, Assembly-CSharp
+        m_MethodName: turnOffCursor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4698,6 +4710,7 @@ GameObject:
   - component: {fileID: 2077023863}
   - component: {fileID: 2077023865}
   - component: {fileID: 2077023864}
+  - component: {fileID: 2077023866}
   m_Layer: 5
   m_Name: start menu
   m_TagString: Untagged
@@ -4748,8 +4761,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -730599761, guid: ceef2824e5827cb41928e263493c7207, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4766,6 +4779,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077023862}
   m_CullTransparentMesh: 1
+--- !u!114 &2077023866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077023862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76aa32cb8bac7149b6d9ca8a4b45cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: -730599761, guid: ceef2824e5827cb41928e263493c7207, type: 3}
+  - {fileID: -1284904370, guid: ceef2824e5827cb41928e263493c7207, type: 3}
+  - {fileID: 1759447613, guid: ceef2824e5827cb41928e263493c7207, type: 3}
+  - {fileID: 1163608963, guid: ceef2824e5827cb41928e263493c7207, type: 3}
+  colors: []
+  image: {fileID: 2077023864}
+  name: {fileID: 80895898}
+  index: 0
 --- !u!1001 &2089074549
 PrefabInstance:
   m_ObjectHideFlags: 0

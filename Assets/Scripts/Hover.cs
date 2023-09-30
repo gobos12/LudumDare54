@@ -36,6 +36,11 @@ public class Hover : MonoBehaviour
         }
     }
 
+    public void turnOffCursor()
+    {
+        Cursor.visible = false;
+    }
+
     /*public Vector3 currentMousePosition()
     {
         return cameraRay.origin + cameraRay.direction;
