@@ -40,7 +40,7 @@ public class DragAndDrop : MonoBehaviour
                 Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
             }
             else if(_mouseState == false){
-                Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
+                
                 RaycastHit hitInfo;
                 target = GetClickedObject (out hitInfo);
                 if (target != null && target.tag != "Crate") {
