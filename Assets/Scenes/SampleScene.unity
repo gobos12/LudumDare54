@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -772,6 +772,8 @@ MonoBehaviour:
   screenSpace: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
   justSpawnedItem: 0
+  cursor: {fileID: 2800000, guid: 8a3e7b99997043849b670c2cbc38f00e, type: 3}
+  cursor2: {fileID: 2800000, guid: 1d1b1434ab64cb642b873cfc119abdfb, type: 3}
 --- !u!4 &1000628234
 Transform:
   m_ObjectHideFlags: 0
