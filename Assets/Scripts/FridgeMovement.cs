@@ -8,6 +8,9 @@ public class FridgeMovement : MonoBehaviour
     private Ray ray;
     public RaycastHit hit;
 
+    public Texture2D pointer;
+    public Texture2D cursor;
+
     public Transform ogCameraPos;
 
     // Update is called once per frame
@@ -22,8 +25,12 @@ public class FridgeMovement : MonoBehaviour
 
         if (Physics.Raycast(ray.origin, ray.direction, out hit))
         {
+            Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
             //Debug.Log(hit.collider.name);
             OpenDoor();
+        }
+        else{
+            Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
         }
 
 
