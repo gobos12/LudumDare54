@@ -20,6 +20,7 @@ public class DragAndDrop : MonoBehaviour
     public bool inTrash = false;
     public LayerMask ignoreLayer;
 
+    public bool colliding = false;
 
     private void Start()
     {
@@ -58,14 +59,17 @@ public class DragAndDrop : MonoBehaviour
                     }
                 }
                 else{
+                    if(!colliding){
                     holding = false;
                     Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
                     if (target != null && target.GetComponent<ObjectSnap>())
                     {
-                        if( target.GetComponent<ObjectSnap>().isBeingSnapped){
-                            Points.singleton.pointCount += 5;
+                       
+                            if( target.GetComponent<ObjectSnap>().isBeingSnapped){
+                                Points.singleton.pointCount += 5;
+                            }
+                            target.GetComponent<ObjectSnap>().isBeingSnapped = false;
                         }
-                        target.GetComponent<ObjectSnap>().isBeingSnapped = false;
                     }
                 }
             }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7669047180412160660}
   - component: {fileID: 2635440788377063122}
   - component: {fileID: 3501379913353532851}
+  - component: {fileID: -5296354369732603787}
+  - component: {fileID: 2757693706577623459}
   m_Layer: 6
   m_Name: corn
   m_TagString: Untagged
@@ -107,3 +109,43 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4794046689979297166, guid: 1f4a7e9769305db468bbd2e7b9a064fe, type: 3}
+--- !u!54 &-5296354369732603787
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3429422824319002700}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &2757693706577623459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3429422824319002700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e745e9d772e610b41a160cf45d98caa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliding: 0
