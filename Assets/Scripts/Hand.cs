@@ -33,14 +33,8 @@ public class Hand : MonoBehaviour
             zPos));
         hand.position = camPos;
         
-        Debug.Log($"mouse={Input.mousePosition}, hand={camPos}, swp={camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.transform.position.z))}");
+        //Debug.Log($"mouse={Input.mousePosition}, hand={camPos}, swp={camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.transform.position.z))}");
         
-        /*screenPoint = camera.WorldToScreenPoint(hand.position);
-        offset = hand.position -
-                 camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-        camPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-        Debug.Log($"screenpoint={screenPoint}, offset={offset},camPos={camPos}");*/
-
         if (Input.mouseScrollDelta.y < 0) //scroll up
         {
             if (zPos > -0.43f)
