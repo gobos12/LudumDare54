@@ -34,7 +34,7 @@ public class ObjectSnap : MonoBehaviour
                     
                    
                 }
-            }
+            
 
             Ray rightRay = new Ray(transform.position, Vector3.left);
             RaycastHit rightHit;
@@ -59,6 +59,7 @@ public class ObjectSnap : MonoBehaviour
                     isBeingSnapped = true;
                     
                 }
+            }
             }
 
         }
