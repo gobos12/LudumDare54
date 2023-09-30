@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class FridgeMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject leftDoor;
-    [SerializeField] private GameObject rightDoor;
-
     public Camera camera;
     private Ray ray;
     public RaycastHit hit;
@@ -47,17 +44,17 @@ public class FridgeMovement : MonoBehaviour
             {
                 if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
                 {
-                    hit.collider.gameObject.transform.position = new Vector3(0, 0, 0);
+                    hit.collider.gameObject.transform.position -= new Vector3(0, 0, 0.8f);
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
-                    camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos;
+                    camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos.position;
                     camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 0f;
                 }
                 else
                 {
-                    hit.collider.gameObject.transform.position = new Vector3(0, 0, 0.5f);
+                    hit.collider.gameObject.transform.position += new Vector3(0, 0, 0.8f);
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition =
-                        hit.collider.gameObject.transform;
+                        hit.collider.gameObject.transform.position + new Vector3(0, 1, 0);
                     camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 90f;
                 }
                 

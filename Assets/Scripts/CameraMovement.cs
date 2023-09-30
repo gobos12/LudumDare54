@@ -10,13 +10,12 @@ public class CameraMovement : MonoBehaviour
     
     public bool targetHit;
     public Transform startPosition;
-    public Transform endPosition;
+    public Vector3 endPosition;
     public float rotationAngle;
 
     void Start()
     {
         startPosition = null;
-        endPosition = null;
         lerpDuration = 0.5f;
         elapsedTime = 0f;
         targetHit = false;
@@ -30,11 +29,11 @@ public class CameraMovement : MonoBehaviour
     }
     
     
-    public void CameraSlerp(Transform start, Transform end)
+    public void CameraSlerp(Transform start, Vector3 end)
     {
         if (elapsedTime < lerpDuration)
         {
-            transform.position = Vector3.Lerp(start.position, end.position, elapsedTime / lerpDuration);
+            transform.position = Vector3.Lerp(start.position, end, elapsedTime / lerpDuration);
             transform.rotation = Quaternion.Slerp(start.rotation, Quaternion.Euler(rotationAngle,180,0), elapsedTime / lerpDuration);
             elapsedTime += Time.deltaTime;
         }
