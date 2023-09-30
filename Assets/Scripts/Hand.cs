@@ -41,14 +41,14 @@ public class Hand : MonoBehaviour
         camPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Debug.Log($"screenpoint={screenPoint}, offset={offset},camPos={camPos}");*/
 
-        if (Input.mouseScrollDelta.y > 0) //scroll up
+        if (Input.mouseScrollDelta.y < 0) //scroll up
         {
             if (zPos > -0.43f)
             {
                 zPos -= 0.1f;
             }
         }
-        else if (Input.mouseScrollDelta.y < 0) //scroll down
+        else if (Input.mouseScrollDelta.y > 0) //scroll down
         {
             if (zPos < 3.8f)
             {
