@@ -9,9 +9,14 @@ public class CameraMovement : MonoBehaviour
     public float elapsedTime;
     
     public bool targetHit;
+    public Transform startPosition;
+    public Transform endPosition;
+    public float rotationAngle;
 
     void Start()
     {
+        startPosition = null;
+        endPosition = null;
         lerpDuration = 0.5f;
         elapsedTime = 0f;
         targetHit = false;
@@ -20,25 +25,25 @@ public class CameraMovement : MonoBehaviour
     {
         if (targetHit)
         {
-            CameraSlerp();
+            CameraSlerp(startPosition, endPosition);
         }
     }
     
     
-    public void CameraSlerp()
+    public void CameraSlerp(Transform start, Transform end)
     {
         if (elapsedTime < lerpDuration)
         {
-            transform.position = Vector3.Lerp(new Vector3(0,0,2), new Vector3(0,0,0.5f), elapsedTime / lerpDuration);
-            transform.rotation = Quaternion.Slerp(new Quaternion(0, 180, 0, 0), new Quaternion(0, 180, -90, 0), elapsedTime / lerpDuration);
+            transform.position = Vector3.Lerp(start.position, end.position, elapsedTime / lerpDuration);
+            transform.rotation = Quaternion.Slerp(start.rotation, Quaternion.Euler(rotationAngle,180,0), elapsedTime / lerpDuration);
             elapsedTime += Time.deltaTime;
         }
         else
         {
             targetHit = false;
+            elapsedTime = 0;
         }
         
-        //gameObject.
     }
     
     
