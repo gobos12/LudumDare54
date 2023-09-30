@@ -141,6 +141,29 @@ PrefabInstance:
       propertyPath: dd
       value: 
       objectReference: {fileID: 1000628233}
+    - target: {fileID: 4647310545525845376, guid: e6db68e00e4bfa34da18eda81d807908,
+        type: 3}
+      propertyPath: foodList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647310545525845376, guid: e6db68e00e4bfa34da18eda81d807908,
+        type: 3}
+      propertyPath: foodList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2712324077762086581, guid: a6f00e9ff0beeb747a350b760dc00d60,
+        type: 3}
+    - target: {fileID: 4647310545525845376, guid: e6db68e00e4bfa34da18eda81d807908,
+        type: 3}
+      propertyPath: foodList.Array.data[2]
+      value: 
+      objectReference: {fileID: 7224484411589201953, guid: 8f94fb1213759a24683c04128bad5d07,
+        type: 3}
+    - target: {fileID: 4647310545525845376, guid: e6db68e00e4bfa34da18eda81d807908,
+        type: 3}
+      propertyPath: foodList.Array.data[3]
+      value: 
+      objectReference: {fileID: 2971376157685924975, guid: 7b6fc799b411ca5418994b813ec7c5b1,
+        type: 3}
     - target: {fileID: 6938653805681241002, guid: e6db68e00e4bfa34da18eda81d807908,
         type: 3}
       propertyPath: m_RootOrder
@@ -1422,7 +1445,7 @@ PrefabInstance:
     - target: {fileID: 560403203437384829, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 730491886819033798, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1482,7 +1505,7 @@ PrefabInstance:
     - target: {fileID: 3412830750047747493, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 3469092428743307030, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1492,12 +1515,12 @@ PrefabInstance:
     - target: {fileID: 3469092428743307030, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 3473882864805471262, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 3634680978064810441, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1527,7 +1550,7 @@ PrefabInstance:
     - target: {fileID: 4795026906579138215, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 5394076318390807935, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1587,7 +1610,7 @@ PrefabInstance:
     - target: {fileID: 6367558610720370681, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 6409885600604898905, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1607,12 +1630,12 @@ PrefabInstance:
     - target: {fileID: 7533928090101568932, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 7535783235780599435, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
-      value: Crate
+      value: Fridge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

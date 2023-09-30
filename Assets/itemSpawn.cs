@@ -26,8 +26,8 @@ public class itemSpawn : MonoBehaviour
 
             int index = Random.Range (0, foodList.Count); 
             var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
-
-            go.transform.position = new Vector3(1.3f, -0.1f, 1f );
+            go.AddComponent<ObjectSnap>();
+            go.transform.position = new Vector3(1.3f, -0.1f, 0f );
             
             dd.offset = new Vector3(0f,0f,0f);
             dd.target = go;

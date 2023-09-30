@@ -35,9 +35,14 @@ public class DragAndDrop : MonoBehaviour
     void NormalItemUpdate()
     {
         if (Input.GetMouseButtonDown (0)) {
-            if (_mouseState) {
+            if (_mouseState)
+            {
                 _mouseState = false;
                 Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+                if (target != null && target.GetComponent<ObjectSnap>())
+                {
+                    target.GetComponent<ObjectSnap>().isBeingSnapped = false;
+                }
             }
             else if(_mouseState == false){
                 
