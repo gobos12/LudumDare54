@@ -32,7 +32,10 @@ public class itemSpawn : MonoBehaviour
             dd.offset = new Vector3(0f,0f,0f);
             dd.target = go;
             dd._mouseState = true;
-            
+   }
+
+   void OnMouseUp(){
+    //dd._mouseState = true;
    }
 
     public RaycastHit RayFromCamera(Vector3 mousePosition, float rayLength)
