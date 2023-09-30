@@ -950,9 +950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 330585545}
-  ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 0
   target: {fileID: 0}
 --- !u!1 &1038080391
 GameObject:
