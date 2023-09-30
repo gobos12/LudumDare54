@@ -8,23 +8,25 @@ public class objectCollisions : MonoBehaviour
     
 
     void OnCollisionEnter (Collision col){
-        colliding = true;
-        Debug.Log("collision happening");
+        
+     
         if (col.gameObject.tag == "Food")
-        {
+        { colliding = true;
             DragAndDrop.singleton.colliding = true;
         }
     }
     void OnCollisionStay (Collision col){
+        
         if (col.gameObject.tag == "Food")
         {
-            DragAndDrop.singleton.colliding = true;
+              colliding = true;
+         //   DragAndDrop.singleton.colliding = true;
         }
     }
      void OnCollisionExit (Collision col){
-        colliding = false;
+       
         if (col.gameObject.tag == "Food")
-        {
+        { colliding = false;
             DragAndDrop.singleton.colliding = false;
         }
     }
