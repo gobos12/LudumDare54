@@ -13,6 +13,8 @@ public class FridgeMovement : MonoBehaviour
 
     public Transform ogCameraPos;
 
+    public GameObject gameController;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +27,6 @@ public class FridgeMovement : MonoBehaviour
 
         if (Physics.Raycast(ray.origin, ray.direction, out hit))
         {
-            
             Debug.Log(hit.collider.name);
             OpenDoor();
         }
@@ -71,18 +72,28 @@ public class FridgeMovement : MonoBehaviour
                     !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
                 
             }
-            else if (hit.collider.name.Contains("Section")) //fridge section
+            else if (hit.collider.name.Contains("Section") || hit.collider.name.Contains("Waste")) //fridge section
             {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos.position;
+                    
+                    if (hit.collider.name.Contains("Waste"))
+                    {
+                        gameController.GetComponent<DragAndDrop>().inTrash = false;
+                    }
                 }
                 else
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition =
                         hit.collider.gameObject.transform.position + new Vector3(0,0,1f);
+                    
+                    if (hit.collider.name.Contains("Waste"))
+                    {
+                        gameController.GetComponent<DragAndDrop>().inTrash = true;
+                    }
                 }
                 
                 camera.gameObject.GetComponent<CameraMovement>().target2Hit = true;

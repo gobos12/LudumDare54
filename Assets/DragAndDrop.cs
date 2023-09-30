@@ -14,6 +14,8 @@ public class DragAndDrop : MonoBehaviour
     public Texture2D cursor;
     public Texture2D cursor2;
 
+    public bool inTrash = false;
+
     void Start ()
     {
 
