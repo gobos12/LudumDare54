@@ -7,6 +7,7 @@ public class DragAndDrop : MonoBehaviour
 {
     public static DragAndDrop singleton;
     public bool holding = false;
+    public GameObject hand;
      
     public GameObject target;
     public Vector3 screenSpace;
@@ -87,7 +88,7 @@ public class DragAndDrop : MonoBehaviour
 
             //var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
 
-            target.transform.position = Hover.singleton.currentMousePosition(); 
+            target.transform.position = hand.transform.position;
         }
     }
 
@@ -101,7 +102,7 @@ public class DragAndDrop : MonoBehaviour
 
         var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
 
-        target.transform.position = Hover.singleton.currentMousePosition();
+        target.transform.position = hand.transform.position;
 
         justSpawnedItem = false;
     }

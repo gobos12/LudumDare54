@@ -15,12 +15,16 @@ public class CameraMovement : MonoBehaviour
     public Vector3 endPosition;
     public float rotationAngle;
 
+    public Hand hand;
+
     void Start()
     {
         startPosition = null;
         lerpDuration = 0.5f;
         elapsedTime = 0f;
         slerpTargetHit = false;
+
+        hand = gameObject.GetComponent<Hand>();
     }
     void Update()
     {
@@ -42,6 +46,7 @@ public class CameraMovement : MonoBehaviour
         {
             transform.position = Vector3.Lerp(start.position, end, elapsedTime / lerpDuration);
             transform.rotation = Quaternion.Slerp(start.rotation, Quaternion.Euler(rotationAngle,180,0), elapsedTime / lerpDuration);
+            hand.zPos = Lerp(start.position.z, end.z, elapsedTime / lerpDuration);
             elapsedTime += Time.deltaTime;
         }
         else
@@ -57,6 +62,7 @@ public class CameraMovement : MonoBehaviour
         if (elapsedTime < lerpDuration)
         {
             transform.position = Vector3.Lerp(start.position, end, elapsedTime / lerpDuration);
+            hand.zPos = Lerp(start.position.z, end.z, elapsedTime / lerpDuration);
             elapsedTime += Time.deltaTime;
         }
         else
@@ -67,7 +73,10 @@ public class CameraMovement : MonoBehaviour
     }
     
     
-    
+    float Lerp(float firstFloat, float secondFloat, float t)
+    {
+        return firstFloat * (1 - t) + secondFloat * t;
+    }
     
     
 }

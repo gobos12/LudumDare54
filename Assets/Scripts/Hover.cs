@@ -16,6 +16,7 @@ public class Hover : MonoBehaviour
     private void Start()
     {
         singleton = this;
+        Cursor.visible = false;
     }
 
     void Update()
