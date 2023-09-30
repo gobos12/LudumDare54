@@ -60,15 +60,17 @@ public class DragAndDrop : MonoBehaviour
                 }
                 else{
                     if(!colliding){
-                    holding = false;
-                    Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+                    
                     if (target != null && target.GetComponent<ObjectSnap>())
                     {
                        
                             if( target.GetComponent<ObjectSnap>().isBeingSnapped){
                                 Points.singleton.pointCount += 5;
+                                holding = false;
+                                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+                                
+                                target.GetComponent<ObjectSnap>().isBeingSnapped = false;
                             }
-                            target.GetComponent<ObjectSnap>().isBeingSnapped = false;
                         }
                     }
                 }

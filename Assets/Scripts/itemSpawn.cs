@@ -14,6 +14,7 @@ public class itemSpawn : MonoBehaviour
       RaycastHit hit = RayFromCamera(Input.mousePosition);
 
       int index = Random.Range (0, foodList.Count); 
+      //if(DragAndDrop.singleton.holding = false){
       var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
       go.AddComponent<ObjectSnap>();
       go.GetComponent<MeshCollider>().enabled = false;
@@ -23,6 +24,7 @@ public class itemSpawn : MonoBehaviour
       DragAndDrop.singleton.holding = true; //holding food item
       DragAndDrop.singleton.justSpawnedItem = true;
       DragAndDrop.singleton.target = go;
+     // }
    }
 
    void OnMouseUp(){
