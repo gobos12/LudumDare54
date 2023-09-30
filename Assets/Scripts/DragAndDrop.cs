@@ -55,6 +55,10 @@ public class DragAndDrop : MonoBehaviour
                     if(target!=null){
                         Destroy(target);
                         Points.singleton.pointCount -= 5;
+                        Points.singleton.trashCount ++;
+                        if( Points.singleton.trashCount >= 3){
+                            Points.singleton.gameOver();
+                        }
                         holding = false;
                     }
                 }

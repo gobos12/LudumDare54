@@ -49,6 +49,11 @@ public class Hover : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public void turnOnCursor()
+    {
+        Cursor.visible = true;
+    }
+
     /*public Vector3 currentMousePosition()
     {
         return cameraRay.origin + cameraRay.direction;
