@@ -48,7 +48,7 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
             if (holding)
             {
-                target.GetComponent<MeshCollider>().enabled = true;
+                //target.GetComponent<MeshCollider>().enabled = true;
                 if(inTrash){
                     if(target!=null){
                         Destroy(target);

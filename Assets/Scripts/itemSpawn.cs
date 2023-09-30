@@ -16,7 +16,7 @@ public class itemSpawn : MonoBehaviour
       int index = Random.Range (0, foodList.Count); 
       var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
       go.AddComponent<ObjectSnap>();
-      go.GetComponent<MeshCollider>().enabled = false;
+      //go.GetComponent<MeshCollider>().enabled = false;
       go.tag = "Food";
       
       DragAndDrop.singleton.holding = true; //holding food item
