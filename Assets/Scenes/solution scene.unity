@@ -3747,7 +3747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodList:
-  - {fileID: 7439653194954487030, guid: b2500fa7dc7305948b58a6f8b79aa437, type: 3}
   - {fileID: 4012993712012494738, guid: db19002db044a3444a8691dfa0f329de, type: 3}
   dd: {fileID: 1975397106}
 --- !u!1001 &1559609205
