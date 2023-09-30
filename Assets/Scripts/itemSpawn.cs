@@ -18,7 +18,7 @@ public class itemSpawn : MonoBehaviour
       {
        var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
        go.AddComponent<ObjectSnap>();
-       go.GetComponent<MeshCollider>().enabled = false;
+       //go.GetComponent<MeshCollider>().enabled = false;
        go.tag = "Food";
        go.GetComponent<Rigidbody>().isKinematic = true;
 

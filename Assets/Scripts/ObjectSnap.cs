@@ -10,6 +10,8 @@ public class ObjectSnap : MonoBehaviour
     private float objectHeight;
     private float objectWidth;
 
+    public RaycastHit hit;
+
     public bool isBeingSnapped = false;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,6 @@ public class ObjectSnap : MonoBehaviour
         if (!isBeingSnapped)
         {
             Ray ray = new Ray(transform.position, Vector3.down);
-            RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 10))
             {
                 if (hit.collider.gameObject.tag == "Fridge")

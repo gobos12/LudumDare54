@@ -12,26 +12,33 @@ public class Hover : MonoBehaviour
     public RaycastHit hit;
     public Ray ray;
 
+    public GameObject fridgeTarget;
+    public RaycastHit fridgeHit;
+    public int fridgeLayer;
+
     public Transform hand;
     public GameObject target;
 
     private void Start()
     {
         singleton = this;
-        //Cursor.visible = false;
+        fridgeLayer = 3;
     }
 
     void Update()
     {
         ray = camera.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f))
-        //if (Physics.Raycast(hand.position, camera.transform.forward, out hit, 1000f))
+        if (Physics.Raycast(ray.origin, ray.direction, out fridgeHit, 1000f, fridgeLayer))
+        {
+            fridgeTarget = fridgeHit.collider.gameObject;
+        }
+        else if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f, ~fridgeLayer))
         {
             target = hit.collider.gameObject;
         }
         else
         {
+            fridgeTarget = null;
             target = null;
         }
     }

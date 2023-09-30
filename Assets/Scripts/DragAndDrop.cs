@@ -50,7 +50,7 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
             if (holding)
             {
-                target.GetComponent<MeshCollider>().enabled = true;
+                //target.GetComponent<MeshCollider>().enabled = true;
                 if(inTrash){
                     if(target!=null){
                         Destroy(target);
@@ -66,6 +66,7 @@ public class DragAndDrop : MonoBehaviour
                        
                             if( target.GetComponent<ObjectSnap>().isBeingSnapped){
                                 Points.singleton.pointCount += 5;
+                                target.transform.parent = (target.GetComponent<ObjectSnap>().hit.collider.gameObject.transform);
                                 holding = false;
                                 Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
                                 
@@ -77,7 +78,7 @@ public class DragAndDrop : MonoBehaviour
             }
             else if(holding == false)
             {
-                target.GetComponent<MeshCollider>().enabled = false;
+                //target.GetComponent<MeshCollider>().enabled = false;
                 RaycastHit hitInfo;
                 //Hover.singleton.ignoreLayer = ignoreLayer;
                 //target = Hover.singleton.target;

@@ -13,7 +13,7 @@ public class enableMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Hover.singleton.target != null && Hover.singleton.target.name.Equals(gameObject.name))
+        if (Hover.singleton.fridgeTarget != null && Hover.singleton.fridgeTarget.name.Equals(gameObject.name))
         {
             GetComponent<MeshRenderer>().enabled = true;
         }

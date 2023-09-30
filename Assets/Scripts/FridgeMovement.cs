@@ -21,9 +21,9 @@ public class FridgeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Hover.singleton.target != null && Hover.singleton.target.tag.Contains("Fridge"))
+        if (Hover.singleton.fridgeTarget != null)
         {
-            OpenDoor(Hover.singleton.target, Hover.singleton.camera);
+            OpenDoor(Hover.singleton.fridgeTarget, Hover.singleton.camera);
         }
 
         /*if (Physics.Raycast(Hover.singleton.hand.position, Hover.singleton.hand.forward, out hit, 1000f, ~ignoreLayer))
