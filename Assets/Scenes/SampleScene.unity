@@ -581,7 +581,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c9415189c8235df45b73de3c1534fce7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1424,6 +1424,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 730491886819033798, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.129
+      objectReference: {fileID: 0}
     - target: {fileID: 1149688971843239376, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
@@ -1434,10 +1439,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 1849307600770104800, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.134
+      objectReference: {fileID: 0}
     - target: {fileID: 2052992651138286326, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
       propertyPath: m_TagString
       value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077826903136863939, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484603899031205617, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.127
       objectReference: {fileID: 0}
     - target: {fileID: 2563917334101579892, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
@@ -1578,6 +1598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711421695786449231, guid: ab6c554cf1d494a4aa9427ab4553207c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.143
       objectReference: {fileID: 0}
     - target: {fileID: 7533928090101568932, guid: ab6c554cf1d494a4aa9427ab4553207c,
         type: 3}
