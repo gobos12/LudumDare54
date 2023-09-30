@@ -15,16 +15,19 @@ public class itemSpawn : MonoBehaviour
 
       int index = Random.Range (0, foodList.Count); 
       //if(DragAndDrop.singleton.holding = false){
-      var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
-      go.AddComponent<ObjectSnap>();
-      go.GetComponent<MeshCollider>().enabled = false;
-      go.tag = "Food";
-      go.GetComponent<Rigidbody>().isKinematic = true;
-      
-      DragAndDrop.singleton.holding = true; //holding food item
-      DragAndDrop.singleton.justSpawnedItem = true;
-      DragAndDrop.singleton.target = go;
-     // }
+      if (DragAndDrop.singleton.target == null)
+      {
+       var go = GameObject.Instantiate(foodList[index], hit.point, Quaternion.identity);
+       go.AddComponent<ObjectSnap>();
+       go.GetComponent<MeshCollider>().enabled = false;
+       go.tag = "Food";
+       go.GetComponent<Rigidbody>().isKinematic = true;
+
+       DragAndDrop.singleton.holding = true; //holding food item
+       DragAndDrop.singleton.justSpawnedItem = true;
+       DragAndDrop.singleton.target = go;
+      }
+      // }
    }
 
    void OnMouseUp(){
