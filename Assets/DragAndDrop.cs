@@ -11,6 +11,9 @@ public class DragAndDrop : MonoBehaviour
     public Vector3 offset;
     public bool justSpawnedItem = false;
 
+    public Texture2D cursor;
+    public Texture2D cursor2;
+
     void Start ()
     {
 
@@ -34,11 +37,15 @@ public class DragAndDrop : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
             if (_mouseState) {
                 _mouseState = false;
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
             }
             else if(_mouseState == false){
+                Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
                 RaycastHit hitInfo;
                 target = GetClickedObject (out hitInfo);
                 if (target != null && target.tag != "Crate") {
+                    
+                Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
                     _mouseState = true;
                     screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
                     offset = target.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
@@ -58,6 +65,7 @@ public class DragAndDrop : MonoBehaviour
 
     void SpawnedItemUpdate()
     {
+        Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
         screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
         var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
 
