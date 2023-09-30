@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 public class DragAndDrop : MonoBehaviour
-{  
-   
-    public bool _mouseState;
+{
+    public static DragAndDrop singleton;
+    public bool holding = false;
      
     public GameObject target;
     public Vector3 screenSpace;
@@ -16,44 +18,45 @@ public class DragAndDrop : MonoBehaviour
 
     public bool inTrash = false;
 
-    public Camera camera;
-    private Ray ray;
-    
 
-    // Update is called once per frame
-    void Update ()
+    private void Start()
     {
-        if (justSpawnedItem)
-        {
-            SpawnedItemUpdate();
-        }
-        else
-        {
-            NormalItemUpdate();
-        }
+        singleton = this;
     }
 
-    Vector3 currentMousePosition()
+    void Update ()
     {
-        ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (target != null)
+        {
+            if (justSpawnedItem)
+            {
+                SpawnedItemUpdate();
+            }
+            else
+            {
+                NormalItemUpdate();
+            }
 
-        return ray.origin + ray.direction;
+        }
+        
+
     }
 
     void NormalItemUpdate()
     {
         if (Input.GetMouseButtonDown (0)) {
-            if (_mouseState)
+            if (holding)
             {
+                target.GetComponent<MeshCollider>().enabled = true;
                 if(inTrash){
                     if(target!=null){
                         Destroy(target);
                         Points.singleton.pointCount -= 5;
-                        _mouseState = false;
+                        holding = false;
                     }
                 }
                 else{
-                    _mouseState = false;
+                    holding = false;
                     Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
                     if (target != null && target.GetComponent<ObjectSnap>())
                     {
@@ -61,26 +64,27 @@ public class DragAndDrop : MonoBehaviour
                     }
                 }
             }
-            else if(_mouseState == false){
-                
+            else if(holding == false)
+            {
+                target.GetComponent<MeshCollider>().enabled = false;
                 RaycastHit hitInfo;
-                target = GetClickedObject (out hitInfo);
-                if (target != null && target.tag != "Crate") {
+                target = Hover.singleton.target;//GetClickedObject (out hitInfo);
+                if (target != null && target.tag != "Crate" && target.tag != "Fridge") {
                     
                     Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
-                        _mouseState = true;
-                        screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
-                        offset = target.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
+                    holding = true;
+                    //screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
+                    //offset = target.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
                 }
             }
         }
         
-        if (_mouseState) {
-            var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
+        if (holding) {
+            //var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
 
-            var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
+            //var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
 
-            target.transform.position = currentMousePosition(); 
+            target.transform.position = Hover.singleton.currentMousePosition(); 
         }
     }
 
@@ -94,7 +98,7 @@ public class DragAndDrop : MonoBehaviour
 
         var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
 
-        target.transform.position = curPosition;
+        target.transform.position = Hover.singleton.currentMousePosition();
 
         justSpawnedItem = false;
     }
@@ -117,4 +121,5 @@ public class DragAndDrop : MonoBehaviour
 
         return target;
     }
+    
 }

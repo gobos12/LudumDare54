@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraMovement : MonoBehaviour
 {
     public float lerpDuration;
     public float elapsedTime;
     
-    public bool targetHit;
-    public bool target2Hit;
+    [FormerlySerializedAs("targetHit")] public bool slerpTargetHit;
+    [FormerlySerializedAs("target2Hit")] public bool lerpTargetHit;
     public Transform startPosition;
     public Vector3 endPosition;
     public float rotationAngle;
@@ -19,16 +20,16 @@ public class CameraMovement : MonoBehaviour
         startPosition = null;
         lerpDuration = 0.5f;
         elapsedTime = 0f;
-        targetHit = false;
+        slerpTargetHit = false;
     }
     void Update()
     {
-        if (targetHit)
+        if (slerpTargetHit)
         {
             CameraSlerp(startPosition, endPosition);
         }
 
-        if (target2Hit)
+        if (lerpTargetHit)
         {
             CameraLerp(startPosition, endPosition);
         }
@@ -45,7 +46,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            targetHit = false;
+            slerpTargetHit = false;
             elapsedTime = 0;
         }
         
@@ -60,7 +61,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            target2Hit = false;
+            lerpTargetHit = false;
             elapsedTime = 0;
         }
     }

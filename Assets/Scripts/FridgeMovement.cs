@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FridgeMovement : MonoBehaviour
 {
-    public Camera camera;
+    /*public Camera camera;
     private Ray ray;
-    public RaycastHit hit;
+    public RaycastHit hit;*/
 
     public Texture2D pointer;
     public Texture2D cursor;
@@ -18,68 +18,55 @@ public class FridgeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Hover();
-    }
-
-    private void Hover()
-    {
-        ray = camera.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray.origin, ray.direction, out hit))
+        if (Hover.singleton.target != null && Hover.singleton.target.tag.Contains("Fridge"))
         {
-            Debug.Log(hit.collider.name);
-            OpenDoor();
+            OpenDoor(Hover.singleton.target, Hover.singleton.camera);
         }
-        else{
-           
-        }
-
-
+        
     }
-    
 
-    private void OpenDoor()
+    private void OpenDoor(GameObject target, Camera camera)
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (hit.collider.name.Contains("Door"))
+            if (target.name.Contains("Door"))
             {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
-                hit.collider.gameObject.transform.rotation = hit.collider.gameObject.GetComponent<ObjectState>().isOpen ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
-                hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
-                    !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
+                target.transform.rotation = target.GetComponent<ObjectState>().isOpen ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
+                target.GetComponent<ObjectState>().isOpen =
+                    !target.GetComponent<ObjectState>().isOpen;
             }
-            else if(hit.collider.name.Contains("Drawer"))//Drawers
+            else if(target.name.Contains("Drawer"))//Drawers
             {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
-                if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
+                if (target.GetComponent<ObjectState>().isOpen)
                 {
-                    hit.collider.gameObject.transform.position -= new Vector3(0, 0, 0.8f);
+                    target.transform.position -= new Vector3(0, 0, 0.8f);
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos.position;
                     camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 0f;
                 }
                 else
                 {   
-                    hit.collider.gameObject.transform.position += new Vector3(0, 0, 0.8f);
+                    target.transform.position += new Vector3(0, 0, 0.8f);
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition =
-                        hit.collider.gameObject.transform.position + new Vector3(0, 1, 0);
+                        target.transform.position + new Vector3(0, 1, 0);
                     camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 90f;
                 }
                 
-                camera.gameObject.GetComponent<CameraMovement>().targetHit = true;
+                camera.gameObject.GetComponent<CameraMovement>().slerpTargetHit = true;
                 
-                hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
-                    !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
+                target.GetComponent<ObjectState>().isOpen =
+                    !target.GetComponent<ObjectState>().isOpen;
                 
             }
-            else if (hit.collider.name.Contains("Section") || hit.collider.name.Contains("Waste")) //fridge section
+            else if (target.name.Contains("Section") || target.name.Contains("Waste")) //fridge section
             {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
-                if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
+                if (target.gameObject.GetComponent<ObjectState>().isOpen)
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos.position;
                     
-                    if (hit.collider.name.Contains("Waste"))
+                    if (target.name.Contains("Waste"))
                     {
                         gameController.GetComponent<DragAndDrop>().inTrash = false;
                     }
@@ -88,21 +75,18 @@ public class FridgeMovement : MonoBehaviour
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
                     camera.gameObject.GetComponent<CameraMovement>().endPosition =
-                        hit.collider.gameObject.transform.position + new Vector3(0,0,1f);
+                        target.transform.position + new Vector3(0,0,1f);
                     
-                    if (hit.collider.name.Contains("Waste"))
+                    if (target.name.Contains("Waste"))
                     {
                         gameController.GetComponent<DragAndDrop>().inTrash = true;
                     }
                 }
                 
-                camera.gameObject.GetComponent<CameraMovement>().target2Hit = true;
+                camera.gameObject.GetComponent<CameraMovement>().lerpTargetHit = true;
 
-                hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
-                    !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
-            }
-            else{
-                
+                target.GetComponent<ObjectState>().isOpen =
+                    !target.GetComponent<ObjectState>().isOpen;
             }
         }
         

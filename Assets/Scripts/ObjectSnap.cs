@@ -26,6 +26,7 @@ public class ObjectSnap : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Fridge")
                 {
+                    Debug.Log("snapped");
                     transform.position = hit.point + new Vector3(0, 0, 0);
                     isBeingSnapped = true;
                 }
