@@ -688,6 +688,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 445132029}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &304904583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4020360767693765181, guid: 60770bdb4dc667c45bea53db0339dc05,
+    type: 3}
+  m_PrefabInstance: {fileID: 445132029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &325894898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5408663870200538173, guid: 60770bdb4dc667c45bea53db0339dc05,
+    type: 3}
+  m_PrefabInstance: {fileID: 445132029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,8 +872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b1b618513c51446b3f3fe1913d7197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 1095420917}
+  hand: {fileID: 325894898}
   camera: {fileID: 330585545}
+  camPos: {x: 0, y: 0, z: 0}
+  screenPoint: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: 0}
   zPos: 0
 --- !u!1 &378206141
 GameObject:
@@ -1769,6 +1784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 330585545}
+  hand: {fileID: 304904583}
   target: {fileID: 0}
 --- !u!1 &1038080391
 GameObject:
@@ -2096,12 +2112,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7734db661ffff4dc9ab2fb743c270b77, type: 3}
---- !u!4 &1095420917 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4838021359202055673, guid: 60770bdb4dc667c45bea53db0339dc05,
-    type: 3}
-  m_PrefabInstance: {fileID: 445132029}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1330184829
 PrefabInstance:
   m_ObjectHideFlags: 0

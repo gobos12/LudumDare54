@@ -8,15 +8,17 @@ public class Hover : MonoBehaviour
     public static Hover singleton;
     
     public Camera camera;
-    public Ray ray;
-    public RaycastHit hit;
 
+    public RaycastHit hit;
+    public Ray ray;
+
+    public Transform hand;
     public GameObject target;
 
     private void Start()
     {
         singleton = this;
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     void Update()
@@ -24,21 +26,18 @@ public class Hover : MonoBehaviour
         ray = camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f))
+        //if (Physics.Raycast(hand.position, camera.transform.forward, out hit, 1000f))
         {
             target = hit.collider.gameObject;
-            
         }
         else
         {
             target = null;
         }
-
-
-        Debug.DrawRay(ray.origin, ray.direction, Color.white);
     }
 
-    public Vector3 currentMousePosition()
+    /*public Vector3 currentMousePosition()
     {
-        return ray.origin + ray.direction;
-    }
+        return cameraRay.origin + cameraRay.direction;
+    }*/
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class FridgeMovement : MonoBehaviour
 {
     /*public Camera camera;
-    private Ray ray;
+    private Ray cameraRay;
     public RaycastHit hit;*/
 
     public Texture2D pointer;
@@ -16,22 +16,20 @@ public class FridgeMovement : MonoBehaviour
     public GameObject gameController;
     public LayerMask ignoreLayer;
 
+    private RaycastHit hit;
+
     // Update is called once per frame
     void Update()
     {
-        /*
         if (Hover.singleton.target != null && Hover.singleton.target.tag.Contains("Fridge"))
         {
             OpenDoor(Hover.singleton.target, Hover.singleton.camera);
         }
-        */
-        Ray ray = Hover.singleton.camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray.origin, ray.direction, out hit, 1000f, ~ignoreLayer))
+        /*if (Physics.Raycast(Hover.singleton.hand.position, Hover.singleton.hand.forward, out hit, 1000f, ~ignoreLayer))
         {
             OpenDoor(hit.collider.gameObject, Hover.singleton.camera);
-        }
+        }*/
 
     }
 
