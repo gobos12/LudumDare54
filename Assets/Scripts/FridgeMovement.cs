@@ -9,7 +9,9 @@ public class FridgeMovement : MonoBehaviour
 
     public Camera camera;
     private Ray ray;
-    private RaycastHit hit;
+    public RaycastHit hit;
+
+    public Transform ogCameraPos;
 
     // Update is called once per frame
     void Update()
@@ -43,8 +45,24 @@ public class FridgeMovement : MonoBehaviour
             }
             else if(hit.collider.name.Contains("Drawer"))//Drawers
             {
-                hit.collider.gameObject.transform.position = hit.collider.gameObject.GetComponent<ObjectState>().isOpen ? new Vector3(0, 0, 0) : new Vector3(0, 0, 0.5f);
+                if (hit.collider.gameObject.GetComponent<ObjectState>().isOpen)
+                {
+                    hit.collider.gameObject.transform.position = new Vector3(0, 0, 0);
+                    camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
+                    camera.gameObject.GetComponent<CameraMovement>().endPosition = ogCameraPos;
+                    camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 0f;
+                }
+                else
+                {
+                    hit.collider.gameObject.transform.position = new Vector3(0, 0, 0.5f);
+                    camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;
+                    camera.gameObject.GetComponent<CameraMovement>().endPosition =
+                        hit.collider.gameObject.transform;
+                    camera.gameObject.GetComponent<CameraMovement>().rotationAngle = 90f;
+                }
+                
                 camera.gameObject.GetComponent<CameraMovement>().targetHit = true;
+                
                 hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
                     !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
                 
