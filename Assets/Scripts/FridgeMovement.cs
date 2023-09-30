@@ -10,10 +10,6 @@ public class FridgeMovement : MonoBehaviour
     public Camera camera;
     private Ray ray;
     private RaycastHit hit;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,12 +37,16 @@ public class FridgeMovement : MonoBehaviour
         {
             if (hit.collider.name.Contains("Door"))
             {
-                hit.collider.gameObject.transform.rotation = hit.collider.gameObject.GetComponent<ObjectState>().isOpen ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 90, 0, 0);
+                hit.collider.gameObject.transform.rotation = hit.collider.gameObject.GetComponent<ObjectState>().isOpen ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
                 hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
                     !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
             }
-            else //Drawers
+            else if(hit.collider.name.Contains("Drawer"))//Drawers
             {
+                hit.collider.gameObject.transform.position = hit.collider.gameObject.GetComponent<ObjectState>().isOpen ? new Vector3(0, 0, 0) : new Vector3(0, 0, 0.5f);
+                camera.gameObject.GetComponent<CameraMovement>().targetHit = true;
+                hit.collider.gameObject.GetComponent<ObjectState>().isOpen =
+                    !hit.collider.gameObject.GetComponent<ObjectState>().isOpen;
                 
             }
         }

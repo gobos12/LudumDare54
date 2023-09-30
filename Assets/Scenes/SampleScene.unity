@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8313c7b84d3c4124da18347841aebebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeCount: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +614,7 @@ MonoBehaviour:
   leftDoor: {fileID: 1626678313321778081}
   rightDoor: {fileID: 7067773725218171651}
   camera: {fileID: 330585545}
+  cameraMovement: {fileID: 0}
 --- !u!1 &1323608338382032812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1323608338484919914, guid: 51ed19930404371458e8d3152edbad78,
@@ -665,6 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!64 &5711163695096420405
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -699,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1 &6100434731741437359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6100434731370130537, guid: 51ed19930404371458e8d3152edbad78,
@@ -751,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1 &7067773725218171651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7067773725115226821, guid: 51ed19930404371458e8d3152edbad78,
@@ -797,6 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!64 &7596127365364061963
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -831,6 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!64 &7927711148891396141
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -865,6 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!64 &8554126683562451761
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -899,3 +907,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cef19efb756748b31d1f2b6a509ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
