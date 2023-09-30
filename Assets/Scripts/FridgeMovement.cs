@@ -26,7 +26,7 @@ public class FridgeMovement : MonoBehaviour
         if (Physics.Raycast(ray.origin, ray.direction, out hit))
         {
             Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
-            //Debug.Log(hit.collider.name);
+            Debug.Log(hit.collider.name);
             OpenDoor();
         }
         else{
@@ -39,7 +39,7 @@ public class FridgeMovement : MonoBehaviour
 
     private void OpenDoor()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             if (hit.collider.name.Contains("Door"))
             {
