@@ -46,7 +46,7 @@ public class CameraMovement : MonoBehaviour
         {
             transform.position = Vector3.Lerp(start.position, end, elapsedTime / lerpDuration);
             transform.rotation = Quaternion.Slerp(start.rotation, Quaternion.Euler(rotationAngle,180,0), elapsedTime / lerpDuration);
-            hand.zPos = Lerp(start.position.z, end.z - 0.5f, elapsedTime / lerpDuration);
+            //hand.zPos = Lerp(start.position.z, end.z + zOffset, elapsedTime / lerpDuration);
             elapsedTime += Time.deltaTime;
         }
         else
@@ -62,7 +62,7 @@ public class CameraMovement : MonoBehaviour
         if (elapsedTime < lerpDuration)
         {
             transform.position = Vector3.Lerp(start.position, end, elapsedTime / lerpDuration);
-            hand.zPos = Lerp(start.position.z, end.z - 0.5f, elapsedTime / lerpDuration);
+            //hand.zPos = Lerp(start.position.z, end.z + zOffset, elapsedTime / lerpDuration);
             elapsedTime += Time.deltaTime;
         }
         else
