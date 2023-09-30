@@ -32,6 +32,8 @@ public class itemSpawn : MonoBehaviour
             dd.offset = new Vector3(0f,0f,0f);
             dd.target = go;
             dd._mouseState = true;
+            dd.justSpawnedItem = true; 
+            Debug.Log("DD MouseState is " + dd._mouseState);
    }
 
    void OnMouseUp(){
