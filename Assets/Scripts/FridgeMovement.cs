@@ -44,7 +44,9 @@ public class FridgeMovement : MonoBehaviour
                     !target.GetComponent<ObjectState>().isOpen;
             }
             else if(target.name.Contains("Drawer"))//Drawers
-            {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
+            {
+                camera.gameObject.GetComponent<AudioSource>().Play();
+                Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (target.GetComponent<ObjectState>().isOpen)
                 {
                     target.transform.position -= new Vector3(0, 0, 0.8f);
@@ -69,6 +71,7 @@ public class FridgeMovement : MonoBehaviour
             }
             else if (target.name.Contains("Section") || target.name.Contains("Waste")) //fridge section
             {   
+                camera.gameObject.GetComponent<AudioSource>().Play();
                 Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (target.gameObject.GetComponent<ObjectState>().isOpen)
                 {
