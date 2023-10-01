@@ -10,8 +10,10 @@ public class Points : MonoBehaviour
 
     public int trashCount = 0;
 
-    public TMP_Text pointText; 
+    public TMP_Text pointText;
+    public TMP_Text timeText;
     public TMP_Text finalpointText;
+    public TMP_Text sarcasticText;
 
     public List<AudioClip> sounds = new List<AudioClip>();
     public float Timer;
@@ -25,22 +27,32 @@ public class Points : MonoBehaviour
         trashCount = 0;
         singleton = this;
         pointText.text = $"Score: {pointCount}";
+        Timer = 100.0f;
     }
 
     void Update()
     {
-        pointText.text = $"Score: {pointCount}";
-        finalpointText.text = $"Final Score: {pointCount}";
+        pointText.text = $"Score:{pointCount}";
+        timeText.text = $"Time:{(int)Timer}";
 
-        Timer += Time.deltaTime;
+        Timer -= Time.deltaTime;
 
-        if (Timer >= 100.0f)
+        if (Timer <= 0.0f)
         {
             gameOver();
         }
     }
 
     public void gameOver(){
+        finalpointText.text = $"Final Score: {pointCount}";
+        if (pointCount > 0)
+        {
+            sarcasticText.text = $"good job ... i guess";
+        }
+        else
+        {
+            sarcasticText.text = $"wow ... even my parents are disappointed";
+        }
         gameOverScreen.SetActive(true);
         Hover.singleton.turnOnCursor();
         uiScreen.SetActive(false);
