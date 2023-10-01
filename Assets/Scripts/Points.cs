@@ -19,6 +19,7 @@ public class Points : MonoBehaviour
     public AudioSource music;
 
     public GameObject gameOverScreen;
+    public GameObject uiScreen;
     void Start()
     {
         trashCount = 0;
@@ -33,7 +34,7 @@ public class Points : MonoBehaviour
 
         Timer += Time.deltaTime;
 
-        if (Timer >= 60.0f)
+        if (Timer >= 100.0f)
         {
             gameOver();
         }
@@ -42,5 +43,7 @@ public class Points : MonoBehaviour
     public void gameOver(){
         gameOverScreen.SetActive(true);
         Hover.singleton.turnOnCursor();
+        uiScreen.SetActive(false);
+
     }
 }
