@@ -35,7 +35,7 @@ public class bgAnimation : MonoBehaviour
         }
         else
         {
-            index += 0.045f;
+            index += Time.deltaTime * 3f;
         }
     }
 }

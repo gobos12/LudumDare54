@@ -34,21 +34,33 @@ public class Hand : MonoBehaviour
         hand.position = camPos;
         
         //Debug.Log($"mouse={Input.mousePosition}, hand={camPos}, swp={camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.transform.position.z))}");
-        
-        if (Input.mouseScrollDelta.y < 0) //scroll up
+
+        if (zPos > 0.2f && zPos < 1.0f)
         {
-            if (zPos > -0.43f)
-            {
-                zPos -= 0.1f;
-            }
-        }
-        else if (Input.mouseScrollDelta.y > 0) //scroll down
-        {
-            if (zPos < 3.8f)
+            if (Input.mouseScrollDelta.y > 0) //scroll up
             {
                 zPos += 0.1f;
             }
+            else if (Input.mouseScrollDelta.y < 0) //scroll down
+            {
+                Debug.Log("scroll down");
+                zPos -= 0.1f;
+            }
         }
+        else if (zPos >= 1.0f)
+        {
+            zPos = 0.9f;
+        }
+        else if (zPos <= 0.2f)
+        {
+            zPos = 0.35f;
+        }
+
+    }
+
+    public void CheckHand()
+    {
+        zPos = camera.nearClipPlane;
     }
     
 }

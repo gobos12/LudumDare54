@@ -52,6 +52,7 @@ public class CameraMovement : MonoBehaviour
         else
         {
             slerpTargetHit = false;
+            //hand.CheckHand();
             elapsedTime = 0;
         }
         
@@ -68,6 +69,7 @@ public class CameraMovement : MonoBehaviour
         else
         {
             lerpTargetHit = false;
+            //hand.CheckHand();
             elapsedTime = 0;
         }
     }

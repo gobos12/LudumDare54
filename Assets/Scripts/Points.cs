@@ -11,7 +11,12 @@ public class Points : MonoBehaviour
     public int trashCount = 0;
 
     public TMP_Text pointText; 
-    public TMP_Text finalpointText; 
+    public TMP_Text finalpointText;
+
+    public List<AudioClip> sounds = new List<AudioClip>();
+    public float Timer;
+
+    public AudioSource music;
 
     public GameObject gameOverScreen;
     void Start()
@@ -26,6 +31,12 @@ public class Points : MonoBehaviour
         pointText.text = $"Score: {pointCount}";
         finalpointText.text = $"Final Score: {pointCount}";
 
+        Timer += Time.deltaTime;
+
+        if (Timer >= 60.0f)
+        {
+            gameOver();
+        }
     }
 
     public void gameOver(){
