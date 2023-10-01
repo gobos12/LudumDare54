@@ -9,6 +9,7 @@ public class itemSpawn : MonoBehaviour
 {
     public List<GameObject> foodList = new List<GameObject>();
 
+
     void OnMouseDown()
    {
       RaycastHit hit = RayFromCamera(Input.mousePosition);
@@ -25,6 +26,7 @@ public class itemSpawn : MonoBehaviour
        DragAndDrop.singleton.holding = true; //holding food item
        DragAndDrop.singleton.justSpawnedItem = true;
        DragAndDrop.singleton.target = go;
+       gameObject.GetComponent<AudioSource>().Play();
       }
       // }
    }
