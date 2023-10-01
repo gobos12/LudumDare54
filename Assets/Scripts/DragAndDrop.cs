@@ -67,8 +67,7 @@ public class DragAndDrop : MonoBehaviour
                     
                     if (target != null && target.GetComponent<ObjectSnap>())
                     {
-                       
-                            if( target.GetComponent<ObjectSnap>().isBeingSnapped){
+                            if(target.GetComponent<ObjectSnap>().SnapSuccess()){
                                 Points.singleton.pointCount += 5;
                                 target.transform.parent = (target.GetComponent<ObjectSnap>().hit.collider.gameObject.transform);
                                 holding = false;

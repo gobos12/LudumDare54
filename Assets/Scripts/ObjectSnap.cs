@@ -20,34 +20,33 @@ public class ObjectSnap : MonoBehaviour
         objectWidth = GetComponent<Renderer>().bounds.size.x;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool SnapSuccess()
     {
-        if (!isBeingSnapped)
-        {
-            Ray ray = new Ray(transform.position, Vector3.down);
+        bool res = false;
+        Ray ray = new Ray(transform.position, Vector3.down);
             if (Physics.Raycast(ray, out hit, 10))
             {
-                if (hit.collider.gameObject.tag == "Fridge")
+                if (hit.collider.gameObject != null && hit.collider.gameObject.tag == "Fridge")
                 {
                     transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
-                    isBeingSnapped = true;
                     if (Hover.singleton.camera.gameObject.GetComponent<CameraMovement>().rotationAngle == 90f)
                     {
                         transform.parent = hit.collider.transform;
                     }
-                   
+
+                    res = true;
                 }
-            
+            }
+
 
             Ray rightRay = new Ray(transform.position, Vector3.left);
             RaycastHit rightHit;
             if (Physics.Raycast(rightRay, out rightHit, objectWidth / 2))
             {
-                if (hit.collider.gameObject.tag == "Fridge" || rightHit.collider.gameObject.layer == 6)
+                if (hit.collider.gameObject != null && hit.collider.gameObject.tag == "Fridge" || rightHit.collider.gameObject.layer == 6)
                 {
                     transform.position = new Vector3(rightHit.point.x + objectWidth / 2, transform.position.y, transform.position.z);
-                    isBeingSnapped = true;
+                    res = true;
                     
                     
                 }
@@ -57,19 +56,14 @@ public class ObjectSnap : MonoBehaviour
             RaycastHit leftHit;
             if (Physics.Raycast(leftRay, out leftHit, objectWidth / 2))
             {
-                if (hit.collider.gameObject.tag == "Fridge" || leftHit.collider.gameObject.layer == 6)
+                if (hit.collider.gameObject != null && hit.collider.gameObject.tag == "Fridge" || leftHit.collider.gameObject.layer == 6)
                 {
                     transform.position = new Vector3(leftHit.point.x - objectWidth / 2, transform.position.y, transform.position.z);
-                    isBeingSnapped = true;
+                    res = true;
                     
                 }
             }
-            }
 
-        }
-        
-        Debug.DrawRay(transform.position, Vector3.down * 10, Color.red);
-        Debug.DrawRay(transform.position, Vector3.left * objectWidth / 2, Color.green);
-        Debug.DrawRay(transform.position, Vector3.right * objectWidth / 2, Color.green);
+            return res;
     }
 }
