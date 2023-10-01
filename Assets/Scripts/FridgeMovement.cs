@@ -38,7 +38,7 @@ public class FridgeMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             if (target.name.Contains("Door"))
-            {   Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
+            {  // Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 target.transform.rotation = target.GetComponent<ObjectState>().isOpen ? new Quaternion(0, 0, 0, 0) : new Quaternion(0, 180, 0, 0);
                 target.GetComponent<ObjectState>().isOpen =
                     !target.GetComponent<ObjectState>().isOpen;
@@ -46,7 +46,7 @@ public class FridgeMovement : MonoBehaviour
             else if(target.name.Contains("Drawer"))//Drawers
             {
                 camera.gameObject.GetComponent<AudioSource>().Play();
-                Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
+              //  Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (target.GetComponent<ObjectState>().isOpen)
                 {
                     target.transform.position -= new Vector3(0, 0, 0.8f);
@@ -72,7 +72,7 @@ public class FridgeMovement : MonoBehaviour
             else if (target.name.Contains("Section") || target.name.Contains("Waste")) //fridge section
             {   
                 camera.gameObject.GetComponent<AudioSource>().Play();
-                Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
+               // Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
                 if (target.gameObject.GetComponent<ObjectState>().isOpen)
                 {
                     camera.gameObject.GetComponent<CameraMovement>().startPosition = camera.transform;

@@ -72,7 +72,7 @@ public class DragAndDrop : MonoBehaviour
                                 Points.singleton.pointCount += 5;
                                 target.transform.parent = (target.GetComponent<ObjectSnap>().hit.collider.gameObject.transform);
                                 holding = false;
-                                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+                              //  Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
                                 
                                 target.GetComponent<ObjectSnap>().isBeingSnapped = false;
                             }
@@ -89,7 +89,7 @@ public class DragAndDrop : MonoBehaviour
                 GameObject localTarget = GetClickedObject(out hitInfo);
                 if (localTarget != null && localTarget.tag != "Crate" && localTarget.tag != "Fridge") {
                     
-                    Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
+                  //  Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
                     holding = true;
                     //screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
                     //offset = target.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
@@ -108,7 +108,7 @@ public class DragAndDrop : MonoBehaviour
 
     void SpawnedItemUpdate()
     {
-        Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
+        //Cursor.SetCursor(cursor2, Vector2.zero, CursorMode.Auto);
         screenSpace = Camera.main.WorldToScreenPoint (target.transform.position);
         var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
 
