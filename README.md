@@ -1,6 +1,6 @@
 # Watsinnafridge?
 
-**A short and sweet sorting game created for Ludum Dare 54**
+**A short and sweet sorting game created for Ludum Dare 54.**
 
 ## Authors
 - Orion Dobos
